@@ -3,11 +3,12 @@
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
+	Hasan Kumar Reddy A -- developer   -- @HasanKumarReddyA
+	Sonika Malloth 	    -- contributor -- 
 
 # THANKS
 
-    <name>
+    Magda El Zarki
 
 # TECHNOLOGY COLOPHON
 

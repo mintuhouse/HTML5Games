@@ -1,0 +1,166 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, a, abbr, big, em, img, center, ul, li, form, label, canvas,
+details, embed, figure, figcaption, footer, header {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: 'Lato', 'Yanone Kaffeesatz', Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.5em;
+  vertical-align: baseline;
+  box-sizing: border-box;
+}
+
+body {
+  background: #EEE;
+  text-shadow: 0 2px 1px #FFF;
+}
+
+.container {
+  width: 960px;
+  margin: 0 auto;
+  padding: 0 5px;
+}
+
+h1 {
+  font-size: 54px;
+  font-family: 'Yanone Kaffeesatz';
+  font-weight: bold;
+  text-align: center;
+}
+h2 {
+  font-size: 36px;
+  font-weight: 700;
+}
+h3 {
+  font-size: 28px;
+  font-weight: 700;
+}
+h4 {
+  font-size: 24px;
+}
+p {
+  font-size: 18px;
+  text-shadow: 0 1px 1px #FFF !important;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+a:hover {
+  color: #000;
+}
+
+.content {
+  width: 640px;
+  margin: 0 5px;
+  float: left;
+}
+
+hr {
+  border: none;
+  border-top: solid 1px #CCC;
+  border-bottom: solid 1px #FFF;
+  margin: 10px 5px;
+}
+
+ul.nav {
+  list-style: none;
+  float: left;
+  margin: 0 40px 0 20px;
+  border-radius: 5px;
+  border: solid 1px #FFF;
+  box-shadow: 0 1px 8px #999;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#EEE), color-stop(100%,#DDD));
+  background: linear-gradient(top, #EEE 0%,#DDD 100%);
+}
+
+  ul.nav li {
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+    ul.nav li:hover {
+      background: #FFF;
+      box-shadow: 0 0 15px #ccc;
+    }
+
+img#pennapps {
+  float: right;
+  border-radius: 3px;
+  box-shadow: 0 1px 8px #999;
+  margin: 5px;
+  width: 300px;
+}
+
+form {
+  margin: 10px 0;
+}
+
+  form .item {
+    width: 620px;
+    padding: 10px;
+  }
+
+  form label {
+    float: left;
+    width: 80px;
+    margin-top: 5px;
+    margin-right: 20px;
+    text-align: right;
+  }
+
+  form input {
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+  }
+
+  form input.text {
+    box-shadow: inset 0 0 10px #CCC;
+    border: solid 1px #CCC;
+    width: 200px;
+  }
+
+    form input.text:hover, form input.text:focus {
+      box-shadow: inset 0 0 10px #AAA;
+    }
+
+  form input#submit {
+    font-family: inherit;
+    font-size: 16px;
+    width: 220px;
+    border: solid 1px #FFF;
+    box-shadow: 0 1px 8px #999;
+    cursor: pointer;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#EEE), color-stop(100%,#DDD));
+    background: linear-gradient(top, #EEE 0%,#DDD 100%);
+  }
+
+    form input#submit:hover {
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FFF), color-stop(100%,#EEE));
+      background: linear-gradient(top, #EEE 0%,#DDD 100%);
+    }
+
+.alert {
+  padding: 10px;
+  border: solid 1px #FFF;
+  box-shadow: 0 1px 5px #999;
+  margin: 10px 0;
+  border-radius: 5px;
+}
+
+  .alert.red {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FDD), color-stop(100%,#ECC));
+    background: linear-gradient(top, #FDD 0%,#ECC 100%);
+  }
+
+  .alert.green {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#DFD), color-stop(100%,#CEC));
+    background: linear-gradient(top, #DFD 0%,#CEC 100%);
+  }

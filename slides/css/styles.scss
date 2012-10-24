@@ -1,0 +1,75 @@
+body {
+  font-family: 'News Cycle', 'Lato', Times, 'Times New Roman', serif;
+}
+
+.two-col {
+  > div:first-child {
+    width: 49%;
+    float: left;
+  }
+  > div:last-child {
+    width: 49%;
+    float: right;
+  }
+}
+
+.align-left {
+  &, p, small, li {
+    text-align: left;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+  }
+}
+
+// Override rules
+.reveal {
+  h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 0.3em;
+    font-family: 'League Gothic', 'News Cycle', Impact, sans-serif;
+  }
+  blockquote {
+    margin-bottom: 0.5em;
+  }
+  section {
+    img {
+      border: none;
+      box-shadow: none;
+    }
+  }
+  small {
+    line-height: 1.4em;
+    a {
+      vertical-align: baseline !important;
+    }
+  }
+  a:not(.image) {
+    line-height: 1.4em;
+  }
+  pre {
+    width: 100%;
+  }
+  xmp {
+    padding: 0.5em;
+    background: #3F3F3F;
+    color: #EEE;
+  }
+}
+
+.slides {
+  > section:first-child {
+    footer {
+      margin-top: 50px;
+    }
+  }
+  ul {
+    &.small {
+      font-size: 0.6em;
+      line-height: 1.5em;
+    }
+    li {
+      margin-bottom: 0.4em;
+      line-height: 1.4em;
+    }
+  }
+}

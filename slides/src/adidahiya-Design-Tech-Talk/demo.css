@@ -1,0 +1,46 @@
+/* Reset and global styles */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, a, abbr, big, em, img, center, ul, li, form, label, canvas,
+details, embed, figure, figcaption, footer, header {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: 'Lato', Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 1.5em;
+  vertical-align: baseline;
+  box-sizing: border-box;
+}
+
+/* Grid */
+.container {
+  width: 960px;
+  margin: 0 auto;
+  padding: 0 5px;
+}
+
+/* Type hierarchy */
+h1 {
+  font-size: 54px;
+  font-family: 'Crete Round';
+  font-weight: bold;
+  text-align: center;
+}
+h2 {
+  font-size: 36px;
+  font-weight: 700;
+}
+h3 {
+  font-size: 28px;
+  font-weight: 700;
+}
+h4 {
+  font-size: 24px;
+}
+p {
+  font-size: 18px;
+  text-shadow: 0 1px 1px #FFF !important;
+}
+
+/* Start here */

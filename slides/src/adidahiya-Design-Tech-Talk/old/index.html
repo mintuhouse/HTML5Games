@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Intro to Web Design</title>
+	<meta name="viewport" content="width=1024, user-scalable=no">
+
+	<link rel="stylesheet" href="deck.core.css" type="text/css">
+	
+	<!-- Extension CSS files -->
+	<link rel="stylesheet" href="extensions/goto/deck.goto.css">
+	<link rel="stylesheet" href="extensions/menu/deck.menu.css">
+	<link rel="stylesheet" href="extensions/navigation/deck.navigation.css">
+	<link rel="stylesheet" href="extensions/status/deck.status.css">
+	<link rel="stylesheet" href="extensions/hash/deck.hash.css">
+
+	<link rel="stylesheet" id="style-theme-link" href="themes/style/swiss.css">
+	<link rel="stylesheet" id="transition-theme-link" href="themes/transition/horizontal-slide.css">
+	<link rel="stylesheet" href="intro-web-design.css">
+	
+	<script src="modernizr.custom.js"></script>
+</head>
+<body class="deck-container">
+
+<!-- Create any number of elements with class slide within the container -->
+<div class="slide">
+	<img class="big" src="images/pennapps.png" />
+	<h1>Intro to Web Design <br/>
+	<span class="title_sub">Making pretty web apps</span></h1>
+</div>
+
+<div class="slide">
+	<h2>What this talk covers</h2>
+	<ol>
+		<li class="slide">
+			<h3>Getting Started With CSS</h3>
+			<p>Box model, selectors, grid system</p>
+		</li>
+		<li class="slide">
+			<h3>Design 101</h3>
+			<p>Color, layout, typography, contrast</p>
+		</li>
+		<li class="slide">
+			<h3>Advanced CSS</h3>
+			<p>Image sprites, pseudo classes, cool effects</p>
+		</li>
+		<li class="slide">
+			<h3>Odds &amp; Ends</h3>
+			<p>Cross-browser support, boilerplates, CSS tools</p>
+		</li>
+	</ol>
+</div>
+
+<div class="slide">
+	<h2>Why is design important?</h2>
+	<ul>
+		<li class="slide">
+			<h3>People take you more seriously</h3>
+			<p>Especially important if you want to get the word out, or want journalists to write about you</p>
+		</li>
+		<li class="slide">
+			<h3>Better usability</h3>
+			<p>Even if things work great on the back end, users need a good way to interact with the application</p>
+		</li>
+		<li class="slide">
+			<h3>Consistency across browsers</h3>
+		</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h2>What is HTML?</h2>
+	<h3 class="slide">Hyper Text Markup Language is used to create and identify content on the page</h3>
+	<h3 class="slide">In other words, the language of "sandwiching content with identifying tags"</h3>
+	<!-- Display HTML code on page -->
+	<xmp class="code slide" style="font-size: 16px !important">
+<html>
+
+<head>
+	<meta charset="utf-8">
+	
+	<link rel="stylesheet">
+	
+	<script type="text/javascript">
+</head>
+
+
+<body>
+	<div> Stuff </div>
+</body>
+
+</html>
+
+	</xmp>
+	<!-- End display HTML code -->
+</div>
+
+<div class="slide">
+	<h2>What is CSS?</h2>
+	<h3>Cascading Style Sheets create layouts and make things pretty</h3> <br/>
+	<h3 style="float: left; width:47%;">HTML tag</h3>
+	<h3 style="float: right; width:47%;">CSS selector</h3>
+	<!-- Display HTML code on page -->
+	<xmp class="code left"><div class="className">...</div>
+
+<div id="idName">...</div>
+
+<img src="." />
+
+<a href=".">...</a>
+
+<h1>...</h1>
+
+<body>...</body>
+
+<div class="class1">...</div>
+<div class="class2">...</div>
+
+<div class="outerClass">
+	<div class="innerClass">...</div>
+</div>
+
+<img class="round" src="." />
+	</xmp>
+	<!-- Display CSS code on page -->
+	<pre class="code right">.className {...}
+
+.idName {...}
+
+img {...}
+
+a {...}
+
+h1 {...}
+
+body {...}
+
+.class1, .class2 {...}
+
+
+.outerClass .innerClass {...}
+
+
+
+img.round {...}
+	</pre>
+
+</div>
+
+<div class="slide">
+	<h1>Let's design something<br/>
+	<span class="title_sub"><a href="http://git.to/design">git.to/design</a></span></h1>
+</div>
+
+<div class="slide">
+	<h1>Getting Started With CSS</h1>
+</div>
+
+<div class="slide">
+	<h2>The Box Model</h2>
+	<img class="big" src="images/box.gif" />
+</div>
+
+<div class="slide">
+	<h2>The Box Model in Action</h2>
+	<img class="big" src="images/feedback3.png" />
+</div>
+
+
+<div class="slide">
+	<h2>Page Layout</h2>
+	<p>Source: <a href="http://twitter.github.com/bootstrap/">Twitter Boostrap</a></p>
+	<img class="big" src="images/layouts.png" />
+</div>
+
+<div class="slide">
+	<h2>Laying out page elements</h2>
+	<h3>Generally two ways to position elements:</h3>
+	<ol>
+		<li class="slide">
+			<h3>Absolute positioning</h3>
+			<p>Not recommended, but useful for certain situations</p>
+		</li>
+		<li class="slide">
+			<h3>Relative positioning</h3>
+			<p>Allows you to <span class="code">float</span> elements, use more of a fluid layout</p>
+		</li>
+	</ol>
+	<h3 class="slide">Ways to use the <span class="code heading">display</span> property:</h3>
+	<ul>
+		<li class="slide">
+			<h3 class="code heading">display: none</h3>
+			<p>Hide elements</p>
+		</li>
+		<li class="slide">
+			<h3 class="code heading">display: block</h3>
+			<p>Default value, element takes up whole width</p>
+		</li>
+		<li class="slide">
+			<h3 class="code heading">display: inline</h3>
+			<p>Element spans only its contents</p>
+		</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h2>Grid systems</h2>
+	<h3>Provide a structure for all elements on a page to follow</h3>
+	<ul>
+		<li class="slide">
+			<h3>Most common: <a href="http://960.gs">960 grid system</a></h3>
+			<img class="big" src="images/960.png" />
+		</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Design 101</h1>
+</div>
+
+<div class="slide">
+	<h2>Utilizing Color</h2>
+	<ul>
+		<li class="slide">
+			<h3>HSL Model</h3>
+		</li>
+		<li class="slide">
+			<h3>Be sensible, use a limited color pallette</h3>
+			<p>However, not limited to Photoshop's "web-only" colors</p>
+		</li>
+		<li class="slide">
+			<h3>Combining colors</h3>
+			<p>Don't use two colors of the same value</p>
+			<p>Bad:</p>
+			<img src="images/ex1.jpg" />
+			<p>Good:</p>
+			<img src="images/ex2.jpg" />
+		</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h2>A Primer on Typography</h2>
+	<blockquote class="slide" cite="http://www.informationarchitects.jp/en/the-web-is-all-about-typography-period/">
+		<p>Web Design is 95% Typography</p>
+		<p><cite>Oliver Reichenstein, CEO &amp; Founder at Information Architects</cite></p>
+	</blockquote>
+	<ul>
+		<li class="slide">
+			<h3>Font faces</h3>
+			<p>Basic terminology</p>
+			<img class="big" src="images/type3.png" />
+			<p>Kerning, letter spacing, &amp; word spacing</p>
+			<p>Leading &amp; line height</p>
+		</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h2>A Primer on Typography (continued)</h2>
+	<ul>
+		<li class="slide">
+			<h3>Font styles</h3>
+			<img class="big" src="images/type1.png" />
+		</li>
+		<li class="slide">
+			<h3>Font weights</h3>
+			<img class="big" src="images/type2.png" />
+		</li>
+		<li class="slide">
+			<h3>Readability</h3>
+			<p>Serif fonts are easier to read</p>
+			<p>Utilize white space</p>
+			<p>Avoid distracting backgrounds</p>
+			<p>Only put emphasis (<b>bold</b>, <i>italic</i>) on elements that need it most</p>
+		</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h2>A Primer on Typography (continued)</h2>
+	<ul>
+		<li class="slide">
+			<h3>Type Layout</h3>
+			<p>Treat bodies of text as a user interface</p>
+			<p>Keep justification and indents in mind</p>
+		</li>
+		<li class="slide">
+			<h3>Establish a consistent type heirarchy</h3>
+			<p>Headings, subheadings, body text, captions, footnotes</p>
+		</li>
+			
+		<a href="http://twitter.github.com/bootstrap/"><img class="big slide" src="images/typography.png" /></a>
+	</ul>
+</div>
+
+<div class="slide">
+	<h2>Contrast in Design</h2>
+	<ul>
+		<li class="slide">
+			<h3>General rule: go big or go home.</h3>
+		</li>
+		<li class="slide">
+			<h3>With Color</h3>
+			<p>Use strong contrast between text color and background color</p>
+			<p>If in doubt, see what your design looks like in grayscale</p>
+		</li>
+		<li class="slide">
+			<h3>With Typography</h3>
+			<p>When mixing fonts, change up the font style + weight</p>
+			<img class="big" src="images/contrast.png" />
+		</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Advanced CSS</h1>
+</div>
+
+<div class="slide">
+	<h2>Let's start with sprites</h2>
+	<ul>
+		<li class="slide">
+			<h3>The problem:</h3>
+			<p>We don't want to wait for all the images on the page to load</p>
+		</li>
+		<li class="slide">
+			<h3>The solution:</h3>
+			<p>Put them all in one file</p>
+		</li>
+		<li class="slide">
+			<h3>Example</h3>
+			<!-- Display HTML code on page -->
+			<xmp class="code left"><div class="ui" id="up"></div>
+			
+<div class="ui" id="down"></div>
+
+<div class="ui" id="left"></div>
+
+<div class="ui" id="right"></div>
+			</xmp>
+			<!-- Display CSS code on page -->
+			<pre class="code right">
+.ui {
+	width: 40px;
+	height: 40px;
+	float: left;
+	margin: 5px;
+}
+
+#up { background-position: 0px 0px; }
+
+#down { background-position: 0px -40px; }
+
+#left { background-position: 0px -80px; }
+
+#right { background-position: 0px -120px; }
+			</pre>
+		</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h2>Pseudo elements</h2>
+	<ul>
+		<li class="slide">
+			<h3>Hover/Focus effects</h3>
+			<h3 class="code">.button:hover, .field:focus { ... }</h3>
+		</li>
+		<li class="slide">
+			<h3>Links</h3>
+			<h3 class="code">a:link, a:visited, a:active, a:hover { ... }</h3>
+		</li>
+		<li class="slide">
+			<h3>And More...</h3>
+			<h3 class="code">tbody:first-child { ... }</h3>
+			<h3 class="code">p.item:before, p.item:after { ... }</h3>
+		</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h2>Effects / layer styles</h2>
+	<ul class="unstyled">
+		<li class="slide">
+			<h3 class="code heading" style="border-radius: 10px;">border-radius: 10px;</h3>
+		</li>
+		<li class="slide">
+			<h3 class="code heading" style="box-shadow: 0px 1px 8px #777777;">box-shadow: 0px 1px 8px #777777;</h3>
+		</li>
+		<li class="slide">
+			<h3 class="code heading" style="background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#1E5799), color-stop(100%,#7DB9E8)) !important; color: #FFF !important;">background: linear-gradient(top, #1e5799 0%,#7db9e8 100%);</h3>
+		</li>
+		<li class="slide">
+			<h3 class="code heading" style="text-shadow: 0px 1px 3px #777 !important">text-shadow: 0px 1px 3px #777777;</h3>
+		</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Odds &amp; Ends</h1>
+</div>
+
+<div class="slide">
+	<h2>Cross-Browser Support</h2>
+	<ul>
+		<li class="slide">
+			<h3><a href="http://www.scribd.com/doc/59761827/Untitled?secret_password=2a4584tcot2boeqxeq2n#full">Why you should stop designing for IE</a></h3>
+		</li>
+		<li class="slide">
+			<h3>Often times, you'll have to include multiple CSS rules that do the same thing</h3>
+			<pre class="code heading">
+.button {
+	box-shadow: 0px 1px 8px #999;
+	-moz-box-shadow: 0px 1px 8px #999;
+	-webkit-box-shadow: 0px 1px 8px #999;
+	-khtml-box-shadow: 0px 1px 8px #999;
+
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-khtml-border-radius: 5px;
+}
+			</pre>
+		</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h2>Some Useful Boilerplates</h2>
+	<h3 class="slide"><a href="http://www.getskeleton.com/">Skeleton boilerplate</h3>
+	<h3 class="slide"><a href="http://thatcoolguy.github.com/gridless-boilerplate/">Gridless boilerplate</h3>
+	<h3 class="slide"><a href="http://html5boilerplate.com/">HTML5 boilerplate</h3>
+	<h3 class="slide"><a href="http://html5reset.org/">HTML5 reset</h3>
+	<h3 class="slide"><a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</h3>
+</div>
+
+<div class="slide">
+	<h2>Supercharging Your CSS</h2>
+	<ul>
+		<li class="slide">
+			<h3><a href="http://lesscss.org/">LESS</a> - compiles into CSS using Javascript</h3>
+			<p>Features variables, mixins, nested rules, operators...</p>
+			<p>Other options (HASS, SASS, SCSS) do roughly the same thing</p>
+		</li>
+		<li class="slide">
+			<h3><a href="http://www.webputty.net/">WebPutty</a></h3>
+			<p>Host and live edit your CSS</p>
+		</li>
+		<li class="slide">
+			<h3><a href="http://www.cssdesk.com/">CSSDesk</a></h3>
+			<p>Sandbox stuff</p>
+		</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h2>Typography</h2>
+	<ul>
+		<li class="slide">
+			<h3>Font faces</h3>
+			<p><span class=code">@font-face</span> = embed your own fonts</p>
+			<p><a href="http://www.google.com/webfonts)">Google Web Font API</a></p>
+			<p><a href="http://typekit.com/">Typekit</a></p>
+			<p><a href="http://cufon.shoqolate.com/">Cufon font replacement</a></p>
+		</li>
+		<li class="slide">
+			<h3>Apply typography concepts</h3>
+			<p>Leading = <span class="code">line-height</span></p>
+			<p>Kerning = <span class="code">letter-spacing</span</p>
+			<p>Word spacing = <span class="code">Word spacing</span></p>
+		</li>
+	<ul>
+</div>
+
+<div class="slide">
+	<img class="big" src="images/pennapps.png" />
+	<h1>Any Questions?<br/>
+	<span class="title_sub">Adi Dahiya &mdash; <a href="mailto:adidas006@gmail.com">adidas006@gmail.com</a></span></h1>
+</div>
+
+
+<!-- Other extension HTML snippets, at the bottom of the deck container. -->
+<a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+<a href="#" class="deck-next-link" title="Next">&#8594;</a>
+
+<p class="deck-status">
+	<span class="deck-status-current"></span>
+	/
+	<span class="deck-status-total"></span>
+</p>
+
+<form action="." method="get" class="goto-form">
+	<label for="goto-slide">Go to slide:</label>
+	<input type="number" name="slidenum" id="goto-slide">
+	<input type="submit" value="Go">
+</form>
+
+<a href="." title="Permalink to this slide" class="deck-permalink">#</a>
+
+
+<script src="jquery-1.6.3.min.js"></script>
+<script src="deck.core.js"></script>
+
+<!-- Extension JS files -->
+<script src="extensions/menu/deck.menu.js"></script>
+<script src="extensions/goto/deck.goto.js"></script>
+<script src="extensions/status/deck.status.js"></script>
+<script src="extensions/navigation/deck.navigation.js"></script>
+<script src="extensions/hash/deck.hash.js"></script>
+
+
+<!-- Initialize the deck. -->
+<script>
+	$(function() {
+		$.deck('.slide');
+	});
+</script>
+</body>
+</html>

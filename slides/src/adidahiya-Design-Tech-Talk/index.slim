@@ -1,0 +1,396 @@
+doctype html
+html lang='en'
+  head
+    title Design [for Programmers]
+    meta charset='utf-8'
+    /[ if lt IE 9 ]
+      script src='http://html5shim.googlecode.com/svn/trunk/html5.js'
+    / Always force latest IE rendering engine & Chrome Frame
+    meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'
+    meta name='apple-mobile-web-app-capable' content='yes'
+    meta name='apple-mobile-web-status-bar-style' content='black-translucent'
+    link rel='shortcut icon' href='img/favicon.png'
+
+    link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' type='text/css'
+    link rel='stylesheet' href='css/reveal.css'
+    link rel='stylesheet' href='css/theme/simple.css' id='theme'
+    link rel='stylesheet' href='lib/css/zenburn.css'
+    link rel='stylesheet' href='css/styles.css'
+
+  body
+    .reveal
+      .state-background
+      .slides
+        section
+          h1 Design for Programmers
+          h3
+            | A beginner's guide to hacking web design
+          img src='img/logo.png'
+          footer
+            a href='http://www.twitter.com/adi_dahiya' @adi_dahiya
+            | &sdot;
+            a href='http://www.github.com/adidahiya' github/adidahiya
+        section
+          h2 Design is important
+          ul
+            li.fragment It makes your hack stand out from the rest
+            li.fragment
+              | Your audience will take you more seriously
+              small (Especially if you want to get publicity / press)
+            li.fragment
+              | Better usability
+              small
+                | The average person doesn't care whether you use Rails or
+                  Django or Node.js or whatever. What matters is the user
+                  experience and how they interact with the application.
+            li.fragment
+              | Consistency across browsers
+              small
+                | Wouldn't it be awesome if you could pull up your site in
+                  mobile Safari right now and have it <em>just work</em>?
+        section
+          h2 What this talk covers
+          ol
+            li The design process
+            li Visual design fundamentals
+            li Getting started with CSS
+            li Clean, semantic HTML
+            li Advanced CSS techniques
+            li Demo
+            li Front end tools & cross-browser support
+        section
+          h2 The design process
+          blockquote Design for the experience first.
+          ul
+            li
+              | Think about flows, scenarios, and activities
+              br
+              small Structure and navigation will emerge from connecting these parts
+            li
+              | Design for the existing ecosystem
+              br
+              small Understand that people already have web apps they know and use
+            li
+              | Good design often comes from adapting what others make
+              br
+              small Make it a point to explore how others have solved the design problems you are working on
+        / Graphic Design
+        section
+          section
+            h1 Visual design fundamentals
+            img src='img/design101.png'
+          section
+            h2 Utilizing color
+            ul
+              li HSL Model
+              li
+                | Be sensible, use a limited color pallette
+                small However, not limited to Photoshop "web-only" colors
+              li
+                | Combining colors
+                br
+                small
+                  | Don't use colors of the same value
+                br
+                img src='img/ex1.jpg' width='380' style='margin-right: 30px'
+                img src='img/ex2.jpg' width='380'
+          section
+            h2 Contrast in Design
+            ul
+              li General rule: go big or go home
+              li
+                | With color
+                br
+                small Use strong contrast between foreground (text) and background color
+                small If in doubt, see what your design looks like in grayscale
+              li
+                | With typography
+                br
+                small When combining fonts, change up the font style + weight
+                br
+                img src='img/contrast.png'
+        / Typography
+        section
+          section
+            h2 A Primer on Typography
+            blockquote cite='http://informationarchitects.net/blog/the-web-is-all-about-typography-period/'
+              | Web Design is 95% typography
+            ul
+              li
+                | Typeface
+                br
+                small Basic terminology:
+                br
+                img src='img/type3.png'
+                br
+                small Kerning, letter spacing, word spacing
+                br
+                small Leading, line height
+          section
+            h2 A Primer on Typography (continued)
+            img src='img/type1.png' width='600'
+            img src='img/type2.png' width='600'
+            br
+            ul.small
+              li Serif fonts are easier to read
+              li Utilize white space
+              li Avoid distracting backgrounds
+              li Only put emphasis (bold, italic, color) on elements that need it most
+          section
+            h2 A Primer on Typography (continued)
+            ul
+              li
+                | Type layout
+                br
+                small Treat bodies of text as a user interface
+                br
+                small Keep justification and indentation in mind
+              li
+                | Establish a consistent type hierarchy
+                br
+                small Headings, subheadings, body text, captions, footnotes
+            img src='img/typography.png' width='800'
+        section
+          h2 Getting Started with CSS
+          h4 The box model
+          img src='img/box.gif'
+          br
+          br
+          small <strong>Protip</strong>: use <code>* { box-sizing: border-box; }</code>
+        section
+          h2 Page layouts
+          br
+          h4 Generally, two ways to position elements:
+          ol style='margin-bottom: 40px'
+            li
+              | Absolute positioning
+              br
+              small Not recommended, but necessary for some situations
+            li
+              | Relative positioning
+              br
+              small Allows you to float elements and use z-index
+          br
+          h4 The "display" property
+          pre: code.css
+            | display: none;          /* hide elements (zero width & height) */
+              display: block;         /* element takes up whole container width */
+              display: inline;        /* element only spans its contents */
+              display: inline-block;  /* shares behavior of inline & block */
+        section
+          h2 Grid systems
+          p Provide a structure to flow all elements on a page
+          small
+            | Most common:
+            a href='http://960.gs/' 960px grid system
+          img src='img/960.png' width='800'
+        section
+          section
+            h2 Clean, Semantic HTML
+            p HTML is the language of "sandwiching content between identifying tags"
+            pre
+              xmp.code
+                | <html>
+                    <head>
+                      <meta charset="utf-8">
+                      <link rel="stylesheet">
+                      <script type="text/javascript">
+                    </head>
+
+                    <body>
+                      <div> Stuff </div>
+                    </body>
+                  </html>
+          section
+            h2 Some HTML tips
+            ul
+              li
+                | HTML5 introduces new tags that help to better identify content:
+                  <em>header, nav, section, article, aside, footer, hgroup</em>
+              li
+                | use <code>[strong]</code> and <code>[em]</code> instead of
+                  <code>[b]</code> and <code>[i]</code> tags
+              li Avoid table layouts
+              li Try to use as little markup as possible
+        / Advanced CSS
+        section
+          section
+            h2 Advanced CSS techniques
+            br
+            h4
+              | Let's start with sprites
+            ul
+              li
+                | The problem:
+                br
+                small Using a lot of images results in too many web requests
+              li.fragment
+                | The solution:
+                br
+                small Put them all in one image file and use CSS to slice relevant parts
+          section
+            h2 Sprites example
+            pre
+              xmp.html
+                | <div class="ui" id="up"></div>
+
+                  <div class="ui" id="down"></div>
+
+                  <div class="ui" id="left"></div>
+
+                  <div class="ui" id="right"></div>
+            pre: code.css
+              | .ui {
+                  width: 40px;
+                  height: 40px;
+                  float: left;
+                  margin: 5px;
+                  background: url('img/my_sprite.png'); /* 40 x 160 px image */
+                }
+
+                #up { background-position: 0px 0px; }
+
+                #down { background-position: 0px -40px; }
+
+                #left { background-position: 0px -80px; }
+
+                #right { background-position: 0px -120px; }
+        section.align-left
+          h2 Pseudo selectors & elements
+          p
+            | Hover / focus effects
+            pre: code.css
+              | .button:hover, .field:focus { ... }
+          p
+            | Links
+            pre: code.css
+              | a:link, a:visited, a:active, a:hover { ... }
+          p
+            | Content before & after
+            pre: code.css
+              | p.item:before, p.item:after { ... }
+          p
+            | And more...
+            pre: code.css
+              | ul li:first-child { ... }
+        section
+          h2 Effects & layer styles
+          pre: code.css style='border-radius: 10px;'
+            | border-radius: 10px;
+          br
+          pre: code.css style='box-shadow: 0px 2px 8px #333;'
+            | box-shadow: 0px 2px 8px #333;
+          br
+          pre: code.css style='background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#1E5799), color-stop(100%,#7DB9E8))'
+            | background: linear-gradient(top, #1e5799 0%, #7db9e8 100%);
+          br
+          pre: code.css style='text-shadow: 0px 0px 3px #FFF;'
+            | text-shadow: 0px 0px 3px #FFF;
+        section
+          h2 Apply typography concepts
+          ul
+            li Leading = <code>line-height</code>
+            li Kerning = <code>letter-spacing</code>
+            li Word spacing = <code>word-spacing</code>
+            li Typeface = <code>font-family</code>
+            li Font weight = <code>font-weight</code>
+        section
+          h2 Cross-Browser support
+          ul
+            li: a href='http://www.scribd.com/doc/59761827/Untitled?secret_password=2a4584tcot2boeqxeq2n#full'
+              | Why you should stop designing for IE
+            li
+              | You will often need vendor prefixes to support the major
+                browsers (mixins help a lot here)
+          pre: code.css
+            | .button {
+                box-shadow: 0px 1px 8px #999;
+                -moz-box-shadow: 0px 1px 8px #999;
+                -webkit-box-shadow: 0px 1px 8px #999;
+                -khtml-box-shadow: 0px 1px 8px #999;
+
+                border-radius: 5px;
+                -moz-border-radius: 5px;
+                -webkit-border-radius: 5px;
+                -khtml-border-radius: 5px;
+              }
+        section
+          h2
+            | Let's design something
+          a href='http://git.to/designdemo' git.to/designdemo
+        section
+          section
+            h2 Awesome front end tools
+            ul
+              li The <a href='http://jtaby.com/2012/04/23/modern-web-development-part-1.html'>webkit inspector</a> is your friend
+              li
+                | See front end code changes show up live:
+                br
+                a href='http://livereload.com/' LiveReload,
+                a href='https://github.com/guard/guard' guard,
+                a href='http://incident57.com/codekit/' CodeKit
+              li
+                | Sandbox / experiment:
+                br
+                a href='http://jsfiddle.net/' jsFiddle,
+                a href='http://cssdeck.com' CSSDeck
+              li
+                | Bootstrap your front end design:
+                br
+                a href='http://twitter.github.com/bootstrap' Twitter Bootstrap,
+                a href='http://foundation.zurb.com/' Foundation,
+                a href='http://html5boilerplate.com/' HTML5 Boilerplate,
+                a href='http://jqueryui.com/' jQuery UI
+              li
+                | Write HTML and CSS more efficiently:
+                br
+                a href='http://lesscss.org/' LESS,
+                a href='http://sass-lang.com/' SASS,
+                a href='http://compass-style.org/' Compass,
+                a href='http://haml.info/' HAML,
+                a href='http://slim-lang.com' Slim
+          section.align-left
+            h2 Use better fonts
+            p
+              | You're not limited to browser defaults and the likes of
+                Helvetica, Times New Roman, and Lucida Grande.
+            p
+              | Learn <a href='http://nicewebtype.com/notes/2009/10/30/how-to-use-css-font-face/'>
+                how to embed your own fonts</a> with <code>@font-face</code>
+            p Get better fonts:
+            ul
+              li: a href='http://www.google.com/webfonts' Google Web Fonts
+              li: a href='http://www.fontsquirrel.com/fontface' Font Squirrel
+              li: a href='https://typekit.com/' Typekit
+              li: a href='http://www.theleagueofmoveabletype.com/' The League of Moveable Type
+          section
+            h2 Get inspired
+            ul
+              li Explore <a href='http://dribbble.com'>Dribbble</a>
+              li
+                | Find & copy web designs that you like
+                br
+                small Use 'view source' and the inspector to check your solution
+              li Study design patterns used in frameworks like Bootstrap
+              li Just build / hack / do it.
+        section
+          h2 Go hack something awesome
+          br
+          h4 Questions or comments?
+          a href='http://twitter.com/adi_dahiya' @adi_dahiya
+          br
+          a href='mailto:adi.dahiya14@gmail.com' adi.dahiya14@gmail.com
+
+      aside.controls
+        a.left  href='#' &#x25C4;
+        a.right href='#' &#x25BA;
+        a.up    href='#' &#x25B2;
+        a.down  href='#' &#x25BC;
+      .progress
+        span
+
+  / Scripts
+  script src='http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js'
+  script src='lib/js/head.min.js'
+  script src='js/reveal.min.js'
+  script src='js/index.js'

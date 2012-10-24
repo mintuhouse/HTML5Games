@@ -1,2 +1,279 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>    
+  <meta charset="utf-8" />
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
 
+  <title> HTML5 Games </title>
+  <meta name="description" content="A study of HTML5 based games">
+  <meta name="author" content="Hasan Kumar Reddy, Sonika Malloth, Pranay Kumar">
+
+  <!--Apple specific meta tags -->
+  <meta content="yes" name="apple-mobile-web-app-capable" />
+  <meta content="black-translucent" name="apple-mobile-web-status-bar-style" />
+
+  <link href="img/favicon_HTML5.png" rel="shortcut icon" />
+
+  <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+
+  <link href="css/reveal.css" rel="stylesheet" />
+  <link href="css/theme/simple.css" id="theme" rel="stylesheet" />
+
+  <!-- For syntax highlighting -->
+  <link href="lib/css/zenburn.css" rel="stylesheet" />
+
+  <link href="css/styles.css" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
+
+  <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+  <script>
+  document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+  </script>
+
+  <!--[if lt IE 9]>
+  <script src="lib/js/html5shiv.js"></script>
+  <![endif]-->
+
+</head>
+
+<body>
+  <div class="reveal">
+  <div class="state-background"></div>
+  <div class="slides">
+    <section>
+      <img src="img/logo_HTML5.png" width="250px"/>
+      <h2>Games</h2>
+      <h4>A brief study of browser games</h4>
+      <footer><!--TODO-->
+        <a href="http://www.hasankumar.com/">Hasan Kumar Reddy &sdot; (09005065)</a><br/>
+        <a href="http://www.cse.iitb.ac.in/~sonika">Sonika Malloth &sdot; (09005054)</a><br/>
+        <a href="#">Pranay Kumar &sdot; (090070XX)</a>
+      </footer>
+    </section>
+
+    <section>
+      <h3>Why HTML5?</h3>
+      <aside class="notes">
+        Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
+      </aside>
+    </section>
+
+    <section>
+      <h4>Rough Timeline of</h4>
+      <h3>Web Technologies</h3>
+      <table id="WebTech">
+        <tr><td class="year">1994</td><td class="technology">HTML2</td><tr>
+        <tr><td class="year">1996</td><td class="technology">CSS1 + javascript</td><tr>
+        <tr><td class="year">1997</td><td class="technology">HTML4</td><tr>
+        <tr><td class="year">1998</td><td class="technology">CSS2</td><tr>
+        <tr><td class="year">2000</td><td class="technology">XHTML1</td><tr>
+        <tr><td class="year">2002</td><td class="technology">Tableless Web Design</td><tr>
+        <tr><td class="year">2005</td><td class="technology">AJAX</td><tr>
+        <tr><td class="year">2009</td><td class="technology">HTML5</td><tr>
+      </table>
+    </section>
+
+    <section>
+      <h3> What is new in HTML5? </h3> <!--TODO: Instead of listing what is new, give a demo of eacch feature on a new slide -->
+      <ul>
+        <li>The main competitors in web multimedia management are Flex by Flash and Silverlight by Microsoft.<br/>
+        They require user to download a browser plugin
+        <li>HTML5 is simply a markup language with an extended layer of tags and attributes to handle rich media content
+        <li>Produces animations and visual effects using JavaScripts and Scalable Vector Graphics
+      </ul>
+    </section>
+    <section>
+      <h3> What is new in HTML5? </h3>
+      <ul>        
+        <li>Real time communication is enabled using websockets
+        <li>Compatibility with different platforms using Canvas
+        <li>Also includes offline local storage and Geo Location
+        <li>Video and audio elements are easy to handle without third party plugins
+      </ul>
+    </section>
+
+    <section>
+      <h3>Canvas</h3>
+      <ul>
+        <li> Allows easy manipulation of pixels without external plugins
+        <li> Auto resize example using simple canvas element:
+          <pre><code class="js">
+  function resizeGame() { 
+      var gameArea = document.getElementById('gameArea'); 
+      var newWidth = window.innerWidth; 
+      var newHeight = window.innerHeight; 
+      gameArea.style.height = newHeight + 'px'; 
+      gameArea.style.width = newWidth + 'px'; 
+      var gameCanvas = document.getElementById('gameCanvas');
+      gameCanvas.width = newWidth; 
+      gameCanvas.height = newHeight; }
+          </code></pre>
+        <li> With the aid of JS, canvas 3D can make stunning visual effects
+      </ul>
+    </section>
+
+    <section>
+      Include http://slides.html5rocks.com/#canvas-3d
+Include source code of this slide in our html ppt
+We will explain source code a little during ppt
+    </section>
+
+    <section>
+      <h3>Web Sockets</h3><!-- Use vertical slides to describe same topic-->
+
+        <p>Google's Ian Hickson—the HTML5 specification lead says:
+          <blockquote> 
+            Reducing kilobytes of data to 2 bytes…and reducing latency from 150ms to 50ms is far more than marginal. In fact, these two factors alone are enough to make Web Sockets seriously interesting to Google. 
+          </blockquote>
+        </p>
+    </section>
+
+    <section>
+      <h3>Polling vs Web Sockets</h3>      
+      <ul>
+        <li>With polling, the browser sends HTTP requests at regular intervals and immediately receives a response.
+        <li>HTTP request and response headers contain unnecessary header information introducing latency
+        <li>Also two connections are opened to create a full-duplex communication over half-duplex HTTP 
+        <li>Web Sockets define a full-duplex communication channel that operates through a single socket over the Web.
+     <ul>
+    </section>
+
+    <section>
+      <h3>Web Socket Handshake</h3>
+      <div class="small-1">
+        <ul>
+          <li>Client and server upgrade from HTTP protocol during their initial handshake</li>
+          <table>
+            <thead>
+              <tr>
+                <th>Browser Request</th>
+                <th>Server Response</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <pre><code class=""> <!--TODO: Understand & Verify -->
+  GET /text HTTP/1.1\r\n 
+  Upgrade: WebSocket\r\n 
+  Connection: Upgrade\r\n 
+  Host: www.websocket.org\r\n 
+  …\r\n 
+                  </code></pre>
+                </td>
+                <td>
+                  <pre><code class="">
+  HTTP/1.1 101 WebSocket Protocol Handshake\r\n 
+  Upgrade: WebSocket\r\n
+  Connection: Upgrade\r\n 
+  …\r\n
+
+                  </code></pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <li>Both text and binary data can be sent on full-duplex after upgrade as data strings in JavaScript</li>
+          <li>Data is framed minimally with just 2 bytes
+          <li>Text frames use a terminator and binary frames use length prefix
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h4>Case Study</h4>
+      <h3>Comet vs WebSockets</h3>
+      <div>
+        <ul>
+          <li>Web application which request real-time stock data from RabbitMQ message broker was created.
+          <li>Comet uses half-duplex polling to get updates
+            <img src="img/comet-websockets.png" id="comet-websockets"/>
+          <li>Using LiveHTTP Headers (a Firefox add-on to show header traffic), the total overhead of request and response headers was observed to be 871 bytes!
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h4>Writing web sockets is simple !!!</h4>
+      <p>Simply establish connection and use open, error, message and close events as necessary</p>
+      <pre><code class="js"> <!--TODO: 1) Highlighting. 2) Use contenteditable to give live demos -->
+  var socket = new WebSocket('ws://localhost:8080/');
+  socket.onopen = function () {
+      alert('Connected!');
+  };
+  socket.onmessage = function (event) {
+      alert('Received data: ' + event.data);
+      socket.close();
+  };
+  socket.onclose = function () {
+      alert('Lost connection!');
+  };
+  socket.send('hello, world!');
+      </pre></code>
+    </section>
+
+    <section>
+      <h3>Other Features</h3>
+      <ul>
+        <li>Audio and Video :  the tracks are loaded the same way all the other game effects are loaded with XMLHttpRequests and the arraybuffer response type and stored in buffers. They are played using <code>&lt;audio&gt;</code> and <code>&lt;video&gt;</code> HTML5 tags.
+        <li>Local Storage :  HTML5 allows to store normalized relational database which can be explored using SQL
+      </ul>
+    </section>
+
+    <section>
+      <h3>Games using HTML5</h3>
+      <div id="gameList"> <!-- TODO: Vertical text -->
+        <img src="img/biolab-disaster.png"/>
+        <img src="img/canvas-rider.png"/>
+        <img src="img/field-runners.png"/>
+        <img src="img/crystal-galaxy.png"/>
+      </div>
+    </section>
+
+    <section>
+      <h3> Our Game </h3>
+      <!-- TODO: Custom Game -->
+    </section>
+
+    <section>
+      <h3>Browser Compatibility</h3>
+      <!--TODO: Include a good table - tag-wise support -->
+    </section>
+
+    <section>
+      <h3>Conclusions</h3>
+      <ul>
+        <li>HTML5 is still considered as work-in-progress and has features which are not compatible with all the browsers.
+        <li>HTML5 does not differentiate between mobile/PC platforms and avoids plugin installations
+        <li>Hence, HTML5 will soon emerge as a new standard for rich media applications over the internet
+      </ul>
+    </section>
+
+    <section> <!-- Look at all new HTML5 tags, use tags for references,cite, author-->
+      <h3>References</h3>
+      <ol>
+        <li>Impact of HTML5 as a Standard, Upul Senanayake,Faculty of Engineering, University of Peradeniya
+        <li>A resource for open web HTML5 developers,http://www.html5rocks.com <!--Include page title-->
+        <li>http://www.websocket.org/
+        <li>http://www.sitepoint.com/5-awesome-html5-games/
+        <li>http://ajf.me/websocket/#demo
+      </ol>
+    </section>
+
+  </div>
+  <aside class="controls">
+    <a class="left" href="#">&#x25C4;</a>
+    <a class="right" href="#">&#x25BA;</a>
+    <a class="up" href="#">&#x25B2;</a>
+    <a class="down" href="#">&#x25BC;</a>
+  </aside>
+  <div class="progress">
+    <span></span>
+  </div>
+  </div>
+</body>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.min.js"></script>
+<script src="js/index.js"></script>
+</html>

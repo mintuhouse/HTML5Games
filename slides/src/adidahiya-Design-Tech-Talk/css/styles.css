@@ -1,0 +1,44 @@
+body {
+  font-family: 'News Cycle', 'Lato', Times, 'Times New Roman', serif; }
+
+.two-col > div:first-child {
+  width: 49%;
+  float: left; }
+.two-col > div:last-child {
+  width: 49%;
+  float: right; }
+
+.align-left, .align-left p, .align-left small, .align-left li {
+  text-align: left; }
+.align-left h1, .align-left h2, .align-left h3, .align-left h4, .align-left h5, .align-left h6 {
+  text-align: center; }
+
+.reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
+  margin-bottom: 0.3em;
+  font-family: 'League Gothic', 'News Cycle', Impact, sans-serif; }
+.reveal blockquote {
+  margin-bottom: 0.5em; }
+.reveal section img {
+  border: none;
+  box-shadow: none; }
+.reveal small {
+  line-height: 1.4em; }
+  .reveal small a {
+    vertical-align: baseline !important; }
+.reveal a:not(.image) {
+  line-height: 1.4em; }
+.reveal pre {
+  width: 100%; }
+.reveal xmp {
+  padding: 0.5em;
+  background: #3F3F3F;
+  color: #EEE; }
+
+.slides > section:first-child footer {
+  margin-top: 50px; }
+.slides ul.small {
+  font-size: 0.6em;
+  line-height: 1.5em; }
+.slides ul li {
+  margin-bottom: 0.4em;
+  line-height: 1.4em; }

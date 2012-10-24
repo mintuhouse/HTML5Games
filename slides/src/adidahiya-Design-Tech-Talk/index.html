@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Design [for Programmers]</title>
+    <meta charset="utf-8" />
+    <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black-translucent" name="apple-mobile-web-status-bar-style" />
+    <link href="img/favicon.png" rel="shortcut icon" />
+    <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+    <link href="css/reveal.css" rel="stylesheet" />
+    <link href="css/theme/simple.css" id="theme" rel="stylesheet" />
+    <link href="lib/css/zenburn.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="state-background"></div>
+      <div class="slides">
+        <section>
+          <h1>Design for Programmers</h1>
+          <h3>A beginner's guide to hacking web design</h3>
+          <img src="img/logo.png" />
+          <footer>
+            <a href="http://www.twitter.com/adi_dahiya">@adi_dahiya</a>&sdot;<a href="http://www.github.com/adidahiya">github/adidahiya</a>
+          </footer>
+        </section>
+        <section>
+          <h2>Design is important</h2>
+          <ul>
+            <li class="fragment">It makes your hack stand out from the rest</li>
+            <li class="fragment">Your audience will take you more seriously<small>(Especially if you want to get publicity / press)</small>
+            </li>
+            <li class="fragment">Better usability<small>The average person doesn't care whether you use Rails or
+                Django or Node.js or whatever. What matters is the user
+                experience and how they interact with the application.</small>
+            </li>
+            <li class="fragment">Consistency across browsers<small>Wouldn't it be awesome if you could pull up your site in
+                mobile Safari right now and have it <em>just work</em>?</small>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2>What this talk covers</h2>
+          <ol>
+            <li>The design process</li>
+            <li>Visual design fundamentals</li>
+            <li>Getting started with CSS</li>
+            <li>Clean, semantic HTML</li>
+            <li>Advanced CSS techniques</li>
+            <li>Demo</li>
+            <li>Front end tools & cross-browser support</li>
+          </ol>
+        </section>
+        <section>
+          <h2>The design process</h2>
+          <blockquote>Design for the experience first.</blockquote>
+          <ul>
+            <li>Think about flows, scenarios, and activities<br /><small>Structure and navigation will emerge from connecting these parts</small>
+            </li>
+            <li>Design for the existing ecosystem<br /><small>Understand that people already have web apps they know and use</small>
+            </li>
+            <li>Good design often comes from adapting what others make<br /><small>Make it a point to explore how others have solved the design problems you are working on</small>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <section>
+            <h1>Visual design fundamentals</h1>
+            <img src="img/design101.png" />
+          </section>
+          <section>
+            <h2>Utilizing color</h2>
+            <ul>
+              <li>HSL Model</li>
+              <li>Be sensible, use a limited color pallette<small>However, not limited to Photoshop "web-only" colors</small>
+              </li>
+              <li>Combining colors<br /><small>Don't use colors of the same value</small><br /><img src="img/ex1.jpg" style="margin-right: 30px" width="380" /><img src="img/ex2.jpg" width="380" />
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>Contrast in Design</h2>
+            <ul>
+              <li>General rule: go big or go home</li>
+              <li>With color<br /><small>Use strong contrast between foreground (text) and background color</small><small>If in doubt, see what your design looks like in grayscale</small>
+              </li>
+              <li>With typography<br /><small>When combining fonts, change up the font style + weight</small><br /><img src="img/contrast.png" />
+              </li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>A Primer on Typography</h2>
+            <blockquote cite="http://informationarchitects.net/blog/the-web-is-all-about-typography-period/">Web Design is 95% typography</blockquote>
+            <ul>
+              <li>Typeface<br /><small>Basic terminology:</small><br /><img src="img/type3.png" /><br /><small>Kerning, letter spacing, word spacing</small><br /><small>Leading, line height</small>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>A Primer on Typography (continued)</h2>
+            <img src="img/type1.png" width="600" /><img src="img/type2.png" width="600" /><br />
+            <ul class="small">
+              <li>Serif fonts are easier to read</li>
+              <li>Utilize white space</li>
+              <li>Avoid distracting backgrounds</li>
+              <li>Only put emphasis (bold, italic, color) on elements that need it most</li>
+            </ul>
+          </section>
+          <section>
+            <h2>A Primer on Typography (continued)</h2>
+            <ul>
+              <li>Type layout<br /><small>Treat bodies of text as a user interface</small><br /><small>Keep justification and indentation in mind</small>
+              </li>
+              <li>Establish a consistent type hierarchy<br /><small>Headings, subheadings, body text, captions, footnotes</small>
+              </li>
+            </ul>
+            <img src="img/typography.png" width="800" />
+          </section>
+        </section>
+        <section>
+          <h2>Getting Started with CSS</h2>
+          <h4>The box model</h4>
+          <img src="img/box.gif" /><br /><br /><small><strong>Protip</strong>: use <code>* { box-sizing: border-box; }</code></small>
+        </section>
+        <section>
+          <h2>Page layouts</h2>
+          <br />
+          <h4>Generally, two ways to position elements:</h4>
+          <ol style="margin-bottom: 40px">
+            <li>Absolute positioning<br /><small>Not recommended, but necessary for some situations</small>
+            </li>
+            <li>Relative positioning<br /><small>Allows you to float elements and use z-index</small>
+            </li>
+          </ol>
+          <br />
+          <h4>The "display" property</h4>
+          <pre><code class="css">display: none;          /* hide elements (zero width & height) */
+display: block;         /* element takes up whole container width */
+display: inline;        /* element only spans its contents */
+display: inline-block;  /* shares behavior of inline & block */</code></pre>
+        </section>
+        <section>
+          <h2>Grid systems</h2>
+          <p>Provide a structure to flow all elements on a page</p>
+          <small>Most common:<a href="http://960.gs/">960px grid system</a></small><img src="img/960.png" width="800" />
+        </section>
+        <section>
+          <section>
+            <h2>Clean, Semantic HTML</h2>
+            <p>HTML is the language of "sandwiching content between identifying tags"</p>
+            <pre><xmp class="code"><html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet">
+    <script type="text/javascript">
+  </head>
+
+  <body>
+    <div> Stuff </div>
+  </body>
+</html></xmp></pre>
+          </section>
+          <section>
+            <h2>Some HTML tips</h2>
+            <ul>
+              <li>HTML5 introduces new tags that help to better identify content:
+                <em>header, nav, section, article, aside, footer, hgroup</em></li>
+              <li>use <code>[strong]</code> and <code>[em]</code> instead of
+<code>[b]</code> and <code>[i]</code> tags</li>
+              <li>Avoid table layouts</li>
+              <li>Try to use as little markup as possible</li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Advanced CSS techniques</h2>
+            <br />
+            <h4>Let's start with sprites</h4>
+            <ul>
+              <li>The problem:<br /><small>Using a lot of images results in too many web requests</small>
+              </li>
+              <li class="fragment">The solution:<br /><small>Put them all in one image file and use CSS to slice relevant parts</small>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>Sprites example</h2>
+            <pre><xmp class="html"><div class="ui" id="up"></div>
+
+<div class="ui" id="down"></div>
+
+<div class="ui" id="left"></div>
+
+<div class="ui" id="right"></div></xmp></pre><pre><code class="css">.ui {
+  width: 40px;
+  height: 40px;
+  float: left;
+  margin: 5px;
+  background: url('img/my_sprite.png'); /* 40 x 160 px image */
+}
+
+#up { background-position: 0px 0px; }
+
+#down { background-position: 0px -40px; }
+
+#left { background-position: 0px -80px; }
+
+#right { background-position: 0px -120px; }</code></pre>
+          </section>
+        </section>
+        <section class="align-left">
+          <h2>Pseudo selectors & elements</h2>
+          <p>Hover / focus effects<pre><code class="css">.button:hover, .field:focus { ... }</code></pre>
+          </p>
+          <p>Links<pre><code class="css">a:link, a:visited, a:active, a:hover { ... }</code></pre>
+          </p>
+          <p>Content before & after<pre><code class="css">p.item:before, p.item:after { ... }</code></pre>
+          </p>
+          <p>And more...<pre><code class="css">ul li:first-child { ... }</code></pre>
+          </p>
+        </section>
+        <section>
+          <h2>Effects & layer styles</h2>
+          <pre><code class="css" style="border-radius: 10px;">border-radius: 10px;</code></pre><br /><pre><code class="css" style="box-shadow: 0px 2px 8px #333;">box-shadow: 0px 2px 8px #333;</code></pre><br /><pre><code class="css" style="background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#1E5799), color-stop(100%,#7DB9E8))">background: linear-gradient(top, #1e5799 0%, #7db9e8 100%);</code></pre><br /><pre><code class="css" style="text-shadow: 0px 0px 3px #FFF;">text-shadow: 0px 0px 3px #FFF;</code></pre>
+        </section>
+        <section>
+          <h2>Apply typography concepts</h2>
+          <ul>
+            <li>Leading = <code>line-height</code></li>
+            <li>Kerning = <code>letter-spacing</code></li>
+            <li>Word spacing = <code>word-spacing</code></li>
+            <li>Typeface = <code>font-family</code></li>
+            <li>Font weight = <code>font-weight</code></li>
+          </ul>
+        </section>
+        <section>
+          <h2>Cross-Browser support</h2>
+          <ul>
+            <li>
+              <a href="http://www.scribd.com/doc/59761827/Untitled?secret_password=2a4584tcot2boeqxeq2n#full">Why you should stop designing for IE</a>
+            </li>
+            <li>You will often need vendor prefixes to support the major
+              browsers (mixins help a lot here)</li>
+          </ul>
+          <pre><code class="css">.button {
+  box-shadow: 0px 1px 8px #999;
+  -moz-box-shadow: 0px 1px 8px #999;
+  -webkit-box-shadow: 0px 1px 8px #999;
+  -khtml-box-shadow: 0px 1px 8px #999;
+
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -khtml-border-radius: 5px;
+}</code></pre>
+        </section>
+        <section>
+          <h2>Let's design something</h2>
+          <a href="http://git.to/designdemo">git.to/designdemo</a>
+        </section>
+        <section>
+          <section>
+            <h2>Awesome front end tools</h2>
+            <ul>
+              <li>The <a href='http://jtaby.com/2012/04/23/modern-web-development-part-1.html'>webkit inspector</a> is your friend</li>
+              <li>See front end code changes show up live:<br /><a href="http://livereload.com/">LiveReload,</a><a href="https://github.com/guard/guard">guard,</a><a href="http://incident57.com/codekit/">CodeKit</a>
+              </li>
+              <li>Sandbox / experiment:<br /><a href="http://jsfiddle.net/">jsFiddle,</a><a href="http://cssdeck.com">CSSDeck</a>
+              </li>
+              <li>Bootstrap your front end design:<br /><a href="http://twitter.github.com/bootstrap">Twitter Bootstrap,</a><a href="http://foundation.zurb.com/">Foundation,</a><a href="http://html5boilerplate.com/">HTML5 Boilerplate,</a><a href="http://jqueryui.com/">jQuery UI</a>
+              </li>
+              <li>Write HTML and CSS more efficiently:<br /><a href="http://lesscss.org/">LESS,</a><a href="http://sass-lang.com/">SASS,</a><a href="http://compass-style.org/">Compass,</a><a href="http://haml.info/">HAML,</a><a href="http://slim-lang.com">Slim</a>
+              </li>
+            </ul>
+          </section>
+          <section class="align-left">
+            <h2>Use better fonts</h2>
+            <p>You're not limited to browser defaults and the likes of
+              Helvetica, Times New Roman, and Lucida Grande.</p>
+            <p>Learn <a href='http://nicewebtype.com/notes/2009/10/30/how-to-use-css-font-face/'>
+how to embed your own fonts</a> with <code>@font-face</code></p>
+            <p>Get better fonts:</p>
+            <ul>
+              <li>
+                <a href="http://www.google.com/webfonts">Google Web Fonts</a>
+              </li>
+              <li>
+                <a href="http://www.fontsquirrel.com/fontface">Font Squirrel</a>
+              </li>
+              <li>
+                <a href="https://typekit.com/">Typekit</a>
+              </li>
+              <li>
+                <a href="http://www.theleagueofmoveabletype.com/">The League of Moveable Type</a>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>Get inspired</h2>
+            <ul>
+              <li>Explore <a href='http://dribbble.com'>Dribbble</a></li>
+              <li>Find & copy web designs that you like<br /><small>Use 'view source' and the inspector to check your solution</small>
+              </li>
+              <li>Study design patterns used in frameworks like Bootstrap</li>
+              <li>Just build / hack / do it.</li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <h2>Go hack something awesome</h2>
+          <br />
+          <h4>Questions or comments?</h4>
+          <a href="http://twitter.com/adi_dahiya">@adi_dahiya</a><br /><a href="mailto:adi.dahiya14@gmail.com">adi.dahiya14@gmail.com</a>
+        </section>
+      </div>
+      <aside class="controls">
+        <a class="left" href="#">&#x25C4;</a><a class="right" href="#">&#x25BA;</a><a class="up" href="#">&#x25B2;</a><a class="down" href="#">&#x25BC;</a>
+      </aside>
+      <div class="progress">
+        <span></span>
+      </div>
+    </div>
+  </body>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <script src="lib/js/head.min.js"></script>
+  <script src="js/reveal.min.js"></script>
+  <script src="js/index.js"></script>
+</html>

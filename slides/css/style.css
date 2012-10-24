@@ -1,0 +1,19 @@
+#WebTech{
+	width: 800px;
+	background-color: #8888ff;
+}
+
+#WebTech .year{
+	width: 400px;
+	text-align: center;
+}
+
+#WebTech .technology{
+	width: 400px;
+	text-align: center;
+}
+
+img#comet-websockets{
+	float:right;
+	width: 500px;
+}

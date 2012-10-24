@@ -1,0 +1,42 @@
+.deck-container .goto-form {
+  position: absolute;
+  z-index: 3;
+  bottom: 10px;
+  left: 10%;
+  height: 1.75em;
+  margin: 0 0 0 -7.125em;
+  line-height: 1.75em;
+  padding: 3px 8px;
+/*   display: none; */
+  background: #eee;
+  overflow: hidden;
+}
+.borderradius .deck-container .goto-form {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+.deck-container .goto-form label {
+  font-weight: bold;
+}
+.deck-container .goto-form label, .deck-container .goto-form input {
+  display: inline-block;
+  font-family: inherit;
+  font-size: 15px;
+}
+
+.deck-goto .goto-form {
+  display: block;
+}
+
+#goto-slide {
+  width: 4.375em;
+  margin: 0 0.625em;
+  height: 1.4375em;
+}
+
+@media print {
+  .goto-form, #goto-slide {
+    display: none !important;
+  }
+}

@@ -72,6 +72,9 @@
       <aside class="notes">
         It's official: with HTML5 today the browser has become a full-fledged gaming platform. Features like high performance 2D and 3D graphics, offline asset storage, rich audio APIs, and socket-based networking let you create compelling modern games with a reach like never before. Connect with users wherever they are by creating HTML5 games that can be played in browsers across desktop or mobile devices. HTML5 has the tools you need to create amazing games that engage with users seamlessly.
         Reference: http://www.html5rocks.com/en/gaming
+
+        We sincerely feel that 10 minutes is too less to describe how wonderful HTML5 is!
+        We will try to discuss a few features that we feel are important
       </aside>
     </section>
 
@@ -169,8 +172,8 @@ We will explain source code a little during ppt
             </thead>
             <tbody>
               <tr>
-                <td>
-                  <pre><code class=""> <!--TODO: Understand & Verify -->
+                <td><!--TODO: Understand & Verify -->
+                  <pre><code class="js">
   GET /text HTTP/1.1\r\n 
   Upgrade: WebSocket\r\n 
   Connection: Upgrade\r\n 
@@ -179,7 +182,7 @@ We will explain source code a little during ppt
                   </code></pre>
                 </td>
                 <td>
-                  <pre><code class="">
+                  <pre><code class="js">
   HTTP/1.1 101 WebSocket Protocol Handshake\r\n 
   Upgrade: WebSocket\r\n
   Connection: Upgrade\r\n 
@@ -213,7 +216,8 @@ We will explain source code a little during ppt
     <section>
       <h4>Writing web sockets is simple !!!</h4>
       <p>Simply establish connection and use open, error, message and close events as necessary</p>
-      <pre><code class="js"> <!--TODO: 1) Highlighting. 2) Use contenteditable to give live demos -->
+       <!--TODO: 1) Highlighting. 2) Use contenteditable to give live demos -->
+      <pre><code class="js">
   var socket = new WebSocket('ws://localhost:8080/');
   socket.onopen = function () {
       alert('Connected!');
@@ -227,6 +231,28 @@ We will explain source code a little during ppt
   };
   socket.send('hello, world!');
       </pre></code>
+    </section>
+
+    <section>
+      <h3> Canvas 3D (WebGL)</h3>
+      <style>
+        #webgl-iframe {
+          border: none;
+          width: 100%;
+          height: 352px;
+        }
+      </style>
+      <!-- TODO: understand code -->
+      <pre><code class="js">
+  &lt;canvas id="canvas" width="858" height="220"&gt;&lt;/canvas&gt;
+
+  &lt;script&gt;
+    var gl = document.getElementById("canvas").<b>getContext</b>("expt-webgl");
+    gl.<b>viewport</b>(0, 0, canvas.width, canvas.height);
+    ...
+  &lt;/script&gt;
+      </code></pre>
+      <iframe scrolling="no" src="src/san_angeles/index.html" id="webgl-iframe"></iframe>
     </section>
 
     <section>
@@ -259,6 +285,53 @@ We will explain source code a little during ppt
       </div>
     </section>
 
+    <section>
+      <h4>Access Native Hardware</h4>
+      <h3>Device APIs</h3>
+        <!--<p><small> In the pipeline</small></p>-->
+        Device APIs WG: www.w3.org/2009/dap/
+      <ul>
+        <li>Geolocation API
+        <li>Device Orientation API ( accelerometer )
+        <li>WebGL ( GPU )
+        <li>HTML5 Filesystem API ( sandboxed filesystem )
+        <li><code>navigator.onLine</code> / <code>navigator.connection</code> ( network connectivity )
+        <li>Battery API
+        <li>Gamepad API
+        <li>WebRTC ( voice & video input ) / Web Audio API ( core audio )
+      </ul>
+    </section>
+
+    <section>
+      Plugin free access to camera/microphone
+      <!-- Imagine the posibilities.. native browser videocalls -->
+      http://www.htmlfivecan.com/#57
+      http://html5-demos.appspot.com/static/getusermedia/photobooth.html
+      http://people.opera.com/danield/webapps/instant-camera/
+    </section>
+
+    <section>
+      HTML5 Audio
+      http://html5-demos.appspot.com/static/webaudio/createMediaSourceElement.html
+
+    </section>
+
+    <section>
+      <p>The Web Can Do Amazing Things...
+      <ul>
+        <li>CSS For Web Apps
+        <li>Dynamic CSS
+        <li>Data binding
+        <li>Access a Filesystem
+        <li>sudo make me a sandwich
+        <li>Serverless Downloads
+        <li>Efficiently Transfer Data
+        <li>Access Native Hardware
+        <li>Make <code>&lt;audio&gt;</code> Sexy Again
+        <li>Stream Multimedia
+      </ul>
+    </section>
+
 <!-- TODO: Custom Game -->
 <!--
     <section>
@@ -284,14 +357,15 @@ We will explain source code a little during ppt
       <h3>References</h3>
       <ol>
         <li>Impact of HTML5 as a Standard, Upul Senanayake,Faculty of Engineering, University of Peradeniya
-        <li>A resource for open web HTML5 developers, by Google - http://www.html5rocks.com <!--Include page title-->
+        <li>* A resource for open web HTML5 developers, by Google - http://www.html5rocks.com <!--Include page title-->
         <li>http://www.websocket.org/
         <li>http://www.sitepoint.com/5-awesome-html5-games/
         <li>http://ajf.me/websocket/#demo
         <li>http://www.zdnet.com/why-html5-is-in-trouble-on-the-mobile-front-7000003748/
+        <li>* http://www.htmlfivecan.com
       </ol>
     </section>
-<!--
+
     <section>
       Advantages:
         Web standard as opposed to platform specific code
@@ -321,7 +395,7 @@ Read more: http://www.businessinsider.com/bii-report-why-html5-is-still-not-read
 Read more: http://www.businessinsider.com/bii-report-why-html5-is-still-not-ready-for-prime-time-2012-9#ixzz2AEuC4jME
 Read more: http://www.businessinsider.com/bii-report-why-html5-is-still-not-ready-for-prime-time-2012-9#ixzz2AEu2WxBu
     </section>
--->
+
   </div>
   <aside class="controls">
     <a class="left" href="#">&#x25C4;</a>

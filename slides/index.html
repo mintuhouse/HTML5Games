@@ -35,7 +35,7 @@
   <![endif]-->
 
 </head>
-<!-- TODO:Madam pdf copy of all the slides -->
+<!-- TODO: Send madam updated copy of all slides -->
 <body>
   <article>
   <header>
@@ -65,11 +65,10 @@
         <li> Open standard <!-- NOTE: No need to pay royalities to  use -->
         <li> No additional plugins required
         <li> Features like high performance 2D and 3D graphics, offline asset storage, rich audio APIs, geo-location API and socket-based networking let you create compelling modern games
-        <aside class="notes">
-          We will explain about each later
-        </aside>
       </ul>
       <aside class="notes">
+        We will go into details later 
+
         It's official: with HTML5 today the browser has become a full-fledged gaming platform. Features like high performance 2D and 3D graphics, offline asset storage, rich audio APIs, and socket-based networking let you create compelling modern games with a reach like never before. Connect with users wherever they are by creating HTML5 games that can be played in browsers across desktop or mobile devices. HTML5 has the tools you need to create amazing games that engage with users seamlessly.
         Reference: http://www.html5rocks.com/en/gaming
 
@@ -110,57 +109,36 @@
         <li>Also includes offline local storage and Geo Location
         <li>Video and audio elements are easy to handle without third party plugins
       </ul>
+      <br/><br/>
+      <p class="large-1">HTML5 has the tools you need to create amazing games<!-- that engage with users seamlessly.--></p>
+      <aside class="notes">
+        Let us discuss each of these features briefly
+      </aside>
     </section>
 
     <section>
-      <h3>Canvas</h3>
-      <ul>
-        <li> Allows easy manipulation of pixels without external plugins
-        <li> Auto resize example using simple canvas element:
-          <pre><code class="js">
-  function resizeGame() { 
-      var gameArea = document.getElementById('gameArea'); 
-      var newWidth = window.innerWidth; 
-      var newHeight = window.innerHeight; 
-      gameArea.style.height = newHeight + 'px'; 
-      gameArea.style.width = newWidth + 'px'; 
-      var gameCanvas = document.getElementById('gameCanvas');
-      gameCanvas.width = newWidth; 
-      gameCanvas.height = newHeight; }
-          </code></pre>
-        <li> With the aid of JS, canvas 3D can make stunning visual effects
-      </ul>
-    </section>
-<!--
-    <section>
-      Include http://slides.html5rocks.com/#canvas-3d
-Include source code of this slide in our html ppt
-We will explain source code a little during ppt
-    </section>
--->
-    <section>
-      <h3>Web Sockets</h3><!-- Use vertical slides to describe same topic-->
+      <section>
+        <h3>Web Sockets</h3><!-- Use vertical slides to describe same topic-->
 
-        <p>Google's Ian Hickson—the HTML5 specification lead says:
-          <blockquote> 
-            Reducing kilobytes of data to 2 bytes…and reducing latency from 150ms to 50ms is far more than marginal. In fact, these two factors alone are enough to make Web Sockets seriously interesting to Google. 
-          </blockquote>
-        </p>
-    </section>
+          <p>Google's Ian Hickson—the HTML5 specification lead says:
+            <blockquote> 
+              Reducing kilobytes of data to 2 bytes…and reducing latency from 150ms to 50ms is far more than marginal. In fact, these two factors alone are enough to make Web Sockets seriously interesting to Google. 
+            </blockquote>
+          </p>
+      </section>
 
-    <section>
-      <h3>Polling vs Web Sockets</h3>      
-      <ul>
-        <li>With polling, the browser sends HTTP requests at regular intervals and immediately receives a response.
-        <li>HTTP request and response headers contain unnecessary header information introducing latency
-        <li>Also two connections are opened to create a full-duplex communication over half-duplex HTTP 
-        <li>Web Sockets define a full-duplex communication channel that operates through a single socket over the Web.
-     <ul>
-    </section>
+      <section>
+        <h3>Polling vs Web Sockets</h3>      
+        <ul>
+          <li>With polling, the browser sends HTTP requests at regular intervals and immediately receives a response.
+          <li>HTTP request and response headers contain unnecessary header information introducing latency
+          <li>Also two connections are opened to create a full-duplex communication over half-duplex HTTP 
+          <li>Web Sockets define a full-duplex communication channel that operates through a single socket over the Web.
+       <ul>
+      </section>
 
-    <section>
-      <h3>Web Socket Handshake</h3>
-      <div class="small-1">
+      <section>
+        <h3>Web Socket Handshake</h3>
         <ul>
           <li>Client and server upgrade from HTTP protocol during their initial handshake</li>
           <table>
@@ -197,99 +175,99 @@ We will explain source code a little during ppt
           <li>Data is framed minimally with just 2 bytes
           <li>Text frames use a terminator and binary frames use length prefix
         </ul>
-      </div>
+      </section>
+
+      <section>
+        <h3>Comet vs WebSockets</h3>
+        <div>
+          <ul>
+            <li>Web application which request real-time stock data from RabbitMQ message broker was created.
+            <li>Comet uses half-duplex polling to get updates
+              <img src="img/comet-websockets.png" id="comet-websockets"/><!-- TODO: References for each img -->
+            <li>Using LiveHTTP Headers (a Firefox add-on to show header traffic), the total overhead of request and response headers was observed to be 871 bytes!
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h4>Writing web sockets is simple !!!</h4>
+        <p>Simply establish connection and use open, error, message and close events as necessary</p>
+         <!--TODO: 1) Highlighting. 2) Use contenteditable to give live demos -->
+        <pre><code class="js">
+    var socket = new WebSocket('ws://localhost:8080/');
+    socket.onopen = function () {
+        alert('Connected!');
+    };
+    socket.onmessage = function (event) {
+        alert('Received data: ' + event.data);
+        socket.close();
+    };
+    socket.onclose = function () {
+        alert('Lost connection!');
+    };
+    socket.send('hello, world!');
+        </pre></code>
+      </section>
     </section>
 
     <section>
-      <h4>Case Study</h4>
-      <h3>Comet vs WebSockets</h3>
-      <div>
+      <section>
+        <h3>Canvas</h3>
         <ul>
-          <li>Web application which request real-time stock data from RabbitMQ message broker was created.
-          <li>Comet uses half-duplex polling to get updates
-            <img src="img/comet-websockets.png" id="comet-websockets"/>
-          <li>Using LiveHTTP Headers (a Firefox add-on to show header traffic), the total overhead of request and response headers was observed to be 871 bytes!
+          <li> Allows easy manipulation of pixels without external plugins
+          <li> Auto resize example using simple canvas element:
+            <pre><code class="js">
+    function resizeGame() { 
+        var gameArea = document.getElementById('gameArea'); 
+        var newWidth = window.innerWidth; 
+        var newHeight = window.innerHeight; 
+        gameArea.style.height = newHeight + 'px'; 
+        gameArea.style.width = newWidth + 'px'; 
+        var gameCanvas = document.getElementById('gameCanvas');
+        gameCanvas.width = newWidth; 
+        gameCanvas.height = newHeight; }
+            </code></pre>
+          <li> With the aid of JS, canvas 3D can make stunning visual effects
         </ul>
-      </div>
+      </section>
+
+      <section>
+        <h3> Canvas 3D (WebGL)</h3>
+        <style>
+          #webgl-iframe {
+            border: none;
+            width: 100%;
+            height: 352px;
+          }
+        </style>
+        <!-- TODO: understand code -->
+        <pre><code class="js">
+    &lt;canvas id="canvas" width="858" height="220"&gt;&lt;/canvas&gt;
+
+    &lt;script&gt;
+      var gl = document.getElementById("canvas").<b>getContext</b>("expt-webgl");
+      gl.<b>viewport</b>(0, 0, canvas.width, canvas.height);
+      ...
+    &lt;/script&gt;
+        </code></pre>
+        <iframe scrolling="no" src="src/san_angeles/index.html" id="webgl-iframe"></iframe>
+      </section>
     </section>
 
     <section>
-      <h4>Writing web sockets is simple !!!</h4>
-      <p>Simply establish connection and use open, error, message and close events as necessary</p>
-       <!--TODO: 1) Highlighting. 2) Use contenteditable to give live demos -->
-      <pre><code class="js">
-  var socket = new WebSocket('ws://localhost:8080/');
-  socket.onopen = function () {
-      alert('Connected!');
-  };
-  socket.onmessage = function (event) {
-      alert('Received data: ' + event.data);
-      socket.close();
-  };
-  socket.onclose = function () {
-      alert('Lost connection!');
-  };
-  socket.send('hello, world!');
-      </pre></code>
-    </section>
-
-    <section>
-      <h3> Canvas 3D (WebGL)</h3>
-      <style>
-        #webgl-iframe {
-          border: none;
-          width: 100%;
-          height: 352px;
-        }
-      </style>
-      <!-- TODO: understand code -->
-      <pre><code class="js">
-  &lt;canvas id="canvas" width="858" height="220"&gt;&lt;/canvas&gt;
-
-  &lt;script&gt;
-    var gl = document.getElementById("canvas").<b>getContext</b>("expt-webgl");
-    gl.<b>viewport</b>(0, 0, canvas.width, canvas.height);
-    ...
-  &lt;/script&gt;
-      </code></pre>
-      <iframe scrolling="no" src="src/san_angeles/index.html" id="webgl-iframe"></iframe>
-    </section>
-
     <section>
       <h3>Other Features</h3>
       <ul>
         <li>Audio and Video :  the tracks are loaded the same way all the other game effects are loaded with XMLHttpRequests and the arraybuffer response type and stored in buffers. They are played using <code>&lt;audio&gt;</code> and <code>&lt;video&gt;</code> HTML5 tags.
-        <li>Local Storage :  HTML5 allows to store normalized relational database which can be explored using SQL
+        <li>Local Storage :  HTML5 allows to store normalized relational database which can be explored using SQL. You can cache content or use a web app to use when you’re not connected to the Internet. An e-commerce HTML5 application could allow people to add items to buy later and then finish the purchase when they are back online.
       </ul>
-    </section>
-
-    <section>
-      <h3>Games using HTML5</h3>
-      <div id="gameList"> <!-- TODO: Vertical text -->
-        <figure>
-          <img src="img/biolab-disaster.png" alt="Biolab Disaster"/>
-          <figcaption>Biolab Disaster</figcaption>
-        </figure>
-        <figure>
-          <img src="img/canvas-rider.png" alt="Canvas Rider"/>
-          <figcaption>Canvas Rider</figcaption>
-        </figure>
-        <figure>
-          <img src="img/field-runners.png" alt="Field Runners"/>
-          <figcaption>Field Runners</figcaption>
-        </figure>
-        <figure>
-          <img src="img/crystal-galaxy.png" alt="Crystal Galaxy"/>
-          <figcaption>Crystal Galaxy</figcaption>
-        </figure>
-      </div>
     </section>
 
     <section>
       <h4>Access Native Hardware</h4>
       <h3>Device APIs</h3>
         <!--<p><small> In the pipeline</small></p>-->
-        Device APIs WG: www.w3.org/2009/dap/
+        Device APIs WG: <a href="http://www.w3.org/2009/dap/">http://www.w3.org/2009/dap/</a>
       <ul>
         <li>Geolocation API
         <li>Device Orientation API ( accelerometer )
@@ -303,17 +281,21 @@ We will explain source code a little during ppt
     </section>
 
     <section>
-      Plugin free access to camera/microphone
-      <!-- Imagine the posibilities.. native browser videocalls -->
-      http://www.htmlfivecan.com/#57
-      http://html5-demos.appspot.com/static/getusermedia/photobooth.html
-      http://people.opera.com/danield/webapps/instant-camera/
+      <h4>Plugin free access to camera/microphone</h4>
+      <aside class="notes">
+        References:<br>
+        <a href="http://www.htmlfivecan.com/#57">http://www.htmlfivecan.com/#57</a><br>
+        <a href="http://html5-demos.appspot.com/static/getusermedia/photobooth.html">http://html5-demos.appspot.com/static/getusermedia/photobooth.html</a><br>
+        <a href="http://people.opera.com/danield/webapps/instant-camera/">http://people.opera.com/danield/webapps/instant-camera/</a><br>
+      </aside>
     </section>
 
     <section>
-      HTML5 Audio
-      http://html5-demos.appspot.com/static/webaudio/createMediaSourceElement.html
-
+      <h4>HTML5 Audio</h4>
+      <aside class="notes">
+      <a href="http://html5-demos.appspot.com/static/webaudio/createMediaSourceElement.html">http://html5-demos.appspot.com/static/webaudio/createMediaSourceElement.html</a>
+      </aside>
+    </section>
     </section>
 
     <section>
@@ -330,6 +312,7 @@ We will explain source code a little during ppt
         <li>Make <code>&lt;audio&gt;</code> Sexy Again
         <li>Stream Multimedia
       </ul>
+      <p>Refer: <a href="http://www.htmlfivecan.com">http://www.htmlfivecan.com</a></p>
     </section>
 
 <!-- TODO: Custom Game -->
@@ -337,11 +320,55 @@ We will explain source code a little during ppt
     <section>
       <h3> Our Game </h3>
     </section>
--->
+-->    
+
+    <section>
+      <h3>Games using HTML5</h3>
+      <div id="gameList"> <!-- TODO: Vertical text & Links to various games-->
+        <figure id="biolab">
+          <img src="img/biolab-disaster.png" alt="Biolab Disaster"/>
+          <figcaption>Biolab Disaster</figcaption>
+        </figure>
+        <figure id="canvas">
+          <img src="img/canvas-rider.png" alt="Canvas Rider"/>
+          <figcaption>Canvas Rider</figcaption>
+        </figure>
+        <figure id="field">
+          <img src="img/field-runners.png" alt="Field Runners"/>
+          <figcaption>Field Runners</figcaption>
+        </figure>
+        <figure id="crystal">
+          <img src="img/crystal-galaxy.png" alt="Crystal Galaxy"/>
+          <figcaption>Crystal Galaxy</figcaption>
+        </figure>
+      </div>
+    </section>
+
     <section>
       <h3>Browser Compatibility</h3>
-      <!--TODO: Include a good table - tag-wise support -->
+      <!--TODO: Include a good table - tag-wise support  - include latest one-->
       <img src="img/html5_browser_support_chart1.png"/>
+    </section>
+
+    <section>
+      <h3>Drawbacks</h3>
+      <ul>
+        <li>Connectivity - HTML5 apps usually require an internet connection to at least load, if not use
+        <li>Performance - native apps are faster
+        <li>Doesn't include digital rights management (DRM) technology to prevent copying
+        <li>Support for different HTML5 video formats - differ in browsers
+        <li>Security Concerns
+        <li>Evolving and no complete support
+      </ul>
+      <aside class="notes">
+        <p>Digital rights management (DRM) is a class of access control technologies that are used by hardware manufacturers, publishers, copyright holders and individuals with the intent to limit the use of digital content and devices after sale. DRM is any technology that inhibits uses of digital content that are not desired or intended by the content provider. DRM also includes specific instances of digital works or devices. Companies such as Amazon, AT &T, AOL,Apple Inc., BBC, Microsoft, Electronic Arts and Sony use digital rights management. </p>
+        <p>
+          Ogg Theora, which is supported by every browser bar Internet Explorer (Safari support requires a manual installation); 
+          H.264, which is supported by everyone but Firefox; and 
+          VP8/WebM, which is supported by everything (although Safari and IE require manual installations).
+        </p>
+
+      </aside>
     </section>
 
     <section>
@@ -356,16 +383,18 @@ We will explain source code a little during ppt
     <section> <!-- Look at all new HTML5 tags, use tags for references,cite, author-->
       <h3>References</h3>
       <ol>
+        <li>* http://www.html5rocks.com - A resource for open web HTML5 developers, by Google <!--Include page title-->
+        <li>* http://www.htmlfivecan.com
         <li>Impact of HTML5 as a Standard, Upul Senanayake,Faculty of Engineering, University of Peradeniya
-        <li>* A resource for open web HTML5 developers, by Google - http://www.html5rocks.com <!--Include page title-->
         <li>http://www.websocket.org/
         <li>http://www.sitepoint.com/5-awesome-html5-games/
         <li>http://ajf.me/websocket/#demo
+        <li>http://amix.dk/blog/post/19707
         <li>http://www.zdnet.com/why-html5-is-in-trouble-on-the-mobile-front-7000003748/
-        <li>* http://www.htmlfivecan.com
+        <li>http://www.businessinsider.com/bii-report-why-html5-is-still-not-ready-for-prime-time-2012-9
       </ol>
     </section>
-
+<!--
     <section>
       Advantages:
         Web standard as opposed to platform specific code
@@ -389,12 +418,8 @@ We will explain source code a little during ppt
         According to Appcelerator's Michael King, there is a 30% differential on feature support across browsers. In other words, some HTML5 features may be supported in Chrome, but not in Safari or Firefox. This problem carries into mobile browsers as well. This undermines the idea that developers can create one HTML5 app and deploy it across all platforms.
         Facebook has abandoned its HTML5-heavy app for one built from scratch with Apple's iOS SDK. Facebook's rating in the app store has jumped from 1.5 starts to 4 stars only a few weeks after launching the new app. While the development of the mobile web is clearly in Facebook's business interest because HTML5 supports payments for mobile web apps, it's not clear that it's Apple or Google's interest. Consumers strongly favor apps to the mobile web at the moment, and Apple and Google take a cut of native app transactions.
         "It's not that HTML5 is bad. I'm actually, long-term, really excited about it" His regret was not that Facebook spent two years dithering on HTML5, but that it spent two years on HTML5 when it wasn't ready, or, as he put it, "it just wasn't there." As we've argued before, HTML5 is the more promising technology in the long-term, which Zuckerberg alluded to in his interview. - Mark Zukerberg
-
-Read more: http://www.businessinsider.com/bii-report-why-html5-is-still-not-ready-for-prime-time-2012-9#ixzz2AEubvsms
-Read more: http://www.businessinsider.com/bii-report-why-html5-is-still-not-ready-for-prime-time-2012-9#ixzz2AEuTiaSX
-Read more: http://www.businessinsider.com/bii-report-why-html5-is-still-not-ready-for-prime-time-2012-9#ixzz2AEuC4jME
-Read more: http://www.businessinsider.com/bii-report-why-html5-is-still-not-ready-for-prime-time-2012-9#ixzz2AEu2WxBu
     </section>
+-->
 
   </div>
   <aside class="controls">
@@ -422,9 +447,3 @@ Read more: http://www.businessinsider.com/bii-report-why-html5-is-still-not-read
 <script src="js/reveal.min.js"></script>
 <script src="js/index.js"></script>
 </html>
-
-<!-- 
-Refer Later:
-http://amix.dk/blog/post/19707
-
--->

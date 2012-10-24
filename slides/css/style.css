@@ -18,7 +18,40 @@ img#comet-websockets{
 	width: 500px;
 }
 
-.small-1{
+body {
 	font-size: 30px;
 
+}
+
+.reveal p.large-1{
+	font-size: 1.1em;
+}
+
+#gameList figure{
+	width: 410px;
+	margin: 0px;
+}
+
+#gameList figure img{
+	margin-top: 10px;
+}
+
+#gameList figcaption{
+	font-size: 0.7em;
+}
+
+#biolab{
+	float:left;
+}
+
+#canvas{
+	float: left;
+}
+
+#field{
+	float:left;
+}
+
+#crystal{
+	float: left;
 }

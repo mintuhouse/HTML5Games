@@ -12,9 +12,10 @@
   , progress: true        // presentation progress bar
   , history: true         // push each slide change to browser history
   , keyboard: true        // allow keyboard nav
+  , overview: true        // enable slide overview
   , loop: false           // loop presentation
   , autoSlide: 0          // ms before auto-advance (0 to disable)
-  , mouseWheel: false     // mouse wheel nav
+  , mouseWheel: true      // mouse wheel nav
   , rollingLinks: true    // apply 3D roll to link hover
   , transition: TRANSITION
   , theme: THEME
@@ -40,21 +41,21 @@
         src: 'lib/js/showdown.js'
       , condition: hasMarkdown
       }
-    , { 
+    , { // Zoom in and out with Alt+click
         src: 'plugin/zoom-js/zoom.js'
       , condition: function() { 
           return !!document.body.classList; 
         } 
       }
-    , { 
-        src: '/socket.io/socket.io.js'
+    , { // Speaker notes support
+        src: 'plugin/speakernotes/client.js'
       , async: true
       , condition: function() { 
           return window.location.host === 'localhost:1947'; 
         } 
       }
     , { 
-        src: 'plugin/speakernotes/client.js'
+        src: '/socket.io/socket.io.js'
       , async: true
       , condition: function() { 
           return window.location.host === 'localhost:1947'; 

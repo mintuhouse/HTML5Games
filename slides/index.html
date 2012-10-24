@@ -35,8 +35,15 @@
   <![endif]-->
 
 </head>
-
+<!-- TODO:Madam pdf copy of all the slides -->
 <body>
+  <article>
+  <header>
+    <!-- TODO: Add navigation here -->
+    <!--<nav>
+      <a href="#"></a>
+    </nav>-->
+  </header>
   <div class="reveal">
   <div class="state-background"></div>
   <div class="slides">
@@ -46,15 +53,16 @@
       <h4>A brief study of browser games</h4>
       <footer><!--TODO-->
         <a href="http://www.hasankumar.com/">Hasan Kumar Reddy &sdot; (09005065)</a><br/>
-        <a href="http://www.cse.iitb.ac.in/~sonika">Sonika Malloth &sdot; (09005054)</a><br/>
-        <a href="#">Pranay Kumar &sdot; (090070XX)</a>
+        <a href="http://www.cse.iitb.ac.in/~msonika">Sonika Malloth &sdot; (09005054)</a><br/>
+        <a href="#">Pranay Kumar &sdot; (09007034)</a>
       </footer>
     </section>
 
     <section>
       <h3>Why HTML5?</h3>
       <aside class="notes">
-        Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
+        It's official: with HTML5 today the browser has become a full-fledged gaming platform. Features like high performance 2D and 3D graphics, offline asset storage, rich audio APIs, and socket-based networking let you create compelling modern games with a reach like never before. Connect with users wherever they are by creating HTML5 games that can be played in browsers across desktop or mobile devices. HTML5 has the tools you need to create amazing games that engage with users seamlessly.
+        Reference: http://www.html5rocks.com/en/gaming
       </aside>
     </section>
 
@@ -223,10 +231,22 @@ We will explain source code a little during ppt
     <section>
       <h3>Games using HTML5</h3>
       <div id="gameList"> <!-- TODO: Vertical text -->
-        <img src="img/biolab-disaster.png"/>
-        <img src="img/canvas-rider.png"/>
-        <img src="img/field-runners.png"/>
-        <img src="img/crystal-galaxy.png"/>
+        <figure>
+          <img src="img/biolab-disaster.png" alt="Biolab Disaster"/>
+          <figcaption>Biolab Disaster</figcaption>
+        </figure>
+        <figure>
+          <img src="img/canvas-rider.png" alt="Canvas Rider"/>
+          <figcaption>Canvas Rider</figcaption>
+        </figure>
+        <figure>
+          <img src="img/field-runners.png" alt="Field Runners"/>
+          <figcaption>Field Runners</figcaption>
+        </figure>
+        <figure>
+          <img src="img/crystal-galaxy.png" alt="Crystal Galaxy"/>
+          <figcaption>Crystal Galaxy</figcaption>
+        </figure>
       </div>
     </section>
 
@@ -257,7 +277,38 @@ We will explain source code a little during ppt
         <li>http://www.websocket.org/
         <li>http://www.sitepoint.com/5-awesome-html5-games/
         <li>http://ajf.me/websocket/#demo
+          http://www.zdnet.com/why-html5-is-in-trouble-on-the-mobile-front-7000003748/
       </ol>
+    </section>
+
+    <section>
+      Advantages:
+        Web standard as opposed to platform specific code
+        HTM5 is the foundation of Mozilla's Firefox OS
+
+    </section>
+
+    <section>
+      Disadvantages:
+        HTML5 is currently being stabilised, the web inventor added, and a lot of work is being done around security and access control.
+        It's often simply out-performed by its rivals, particularly where the app is one that needs to deliver speed or a familiar app-like experience.
+        In June, German social games developer Wooga abandoned its HTML5 efforts, citing problems such as discoverability (people aren't used to setting up links as homescreen icons), performance (native apps are faster), and connectivity (HTML5 apps usually require an internet connection to at least load, if not use).
+        Facebook ditched HTML5 for iOS apps. For faster performance and integrate Camera & Messenger apps into main app
+        The DRM (digital rights management) problem with multimedia content. While many people are opposed to DRM, broadcasters tend not to be in their ranks, because that would involve irking their content suppliers. HTML5 does not in itself support DRM for video.
+        The underlying issue is that HTML5 is a proper standard, being developed by multiple stakeholders. I hesitate to call this a 'problem', because that's how standards are and how they mostly should be made. But it does put the nascent technology at a strong disadvantage against platforms that are more directly controlled and easily progressed.
+        Why, at this point, should they think of addressing HTML5 early on? The best reason is its cross-platform nature: but right now, HTML5 apps generally get out-performed on each platform by native apps.
+        I'm not saying HTML5 is dead on smartphones. Far from it. It's working now, and it will only get better.
+        Advice for developers
+        If HTML5 works for you, then go for it. As I said in the article, it does work on phones, just not as well as native apps tend to. This will improve over time, and how tolerant you are of waiting is specific to your circumstances.
+        HTML5 is a set of related standards. This is key to understanding the problems that beset HTML5. While the idea of one HTML5-powered app working across all platforms is a nice pipe dream, the reality is currently a bit more complicated. 
+        According to Appcelerator's Michael King, there is a 30% differential on feature support across browsers. In other words, some HTML5 features may be supported in Chrome, but not in Safari or Firefox. This problem carries into mobile browsers as well. This undermines the idea that developers can create one HTML5 app and deploy it across all platforms.
+        Facebook has abandoned its HTML5-heavy app for one built from scratch with Apple's iOS SDK. Facebook's rating in the app store has jumped from 1.5 starts to 4 stars only a few weeks after launching the new app. While the development of the mobile web is clearly in Facebook's business interest because HTML5 supports payments for mobile web apps, it's not clear that it's Apple or Google's interest. Consumers strongly favor apps to the mobile web at the moment, and Apple and Google take a cut of native app transactions.
+        "It's not that HTML5 is bad. I'm actually, long-term, really excited about it" His regret was not that Facebook spent two years dithering on HTML5, but that it spent two years on HTML5 when it wasn't ready, or, as he put it, "it just wasn't there." As we've argued before, HTML5 is the more promising technology in the long-term, which Zuckerberg alluded to in his interview. - Mark Zukerberg
+
+Read more: http://www.businessinsider.com/bii-report-why-html5-is-still-not-ready-for-prime-time-2012-9#ixzz2AEubvsms
+Read more: http://www.businessinsider.com/bii-report-why-html5-is-still-not-ready-for-prime-time-2012-9#ixzz2AEuTiaSX
+Read more: http://www.businessinsider.com/bii-report-why-html5-is-still-not-ready-for-prime-time-2012-9#ixzz2AEuC4jME
+Read more: http://www.businessinsider.com/bii-report-why-html5-is-still-not-ready-for-prime-time-2012-9#ixzz2AEu2WxBu
     </section>
 
   </div>
@@ -271,9 +322,24 @@ We will explain source code a little during ppt
     <span></span>
   </div>
   </div>
+  <footer><!-- TODO: Add content here -->
+    <!--For Educational Purpose only-->
+    <!--<details>
+      <summary>&copy;</summary>
+      <p> - by Hasan, Sonika, Pranay - for CS620: New Trends in IT course</p>
+      <p>Except where otherwise noted, content on this slideshow is licensed under a Creative Commons Attribution 3.0 License.</p>
+    </details>-->
+  </footer>
+  </article>
 </body>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script src="lib/js/head.min.js"></script>
 <script src="js/reveal.min.js"></script>
 <script src="js/index.js"></script>
 </html>
+
+<!-- 
+Refer Later:
+http://amix.dk/blog/post/19707
+
+-->

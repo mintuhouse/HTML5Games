@@ -55,3 +55,8 @@ body {
 #crystal{
 	float: left;
 }
+
+.reveal pre{
+	font-size: 0.7em;
+
+}

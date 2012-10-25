@@ -281,7 +281,16 @@
     </section>
 
     <section>
-      <h4>Plugin free access to camera/microphone</h4>
+      <h4>Plugin free access to camera/microphone</h4>      
+      <style>
+        #photobooth-iframe {
+          border: none;
+          width: 100%;
+          height: 400px;
+        }
+      </style>
+      <iframe scrolling="no" src="src/photobooth/index.html" id="photobooth-iframe"></iframe>
+      <p>Courtesy: <a href="http://html5-demos.appspot.com/static/getusermedia/photobooth.html">photobooth</a>, by Google</p>
       <aside class="notes">
         References:<br>
         <a href="http://www.htmlfivecan.com/#57">http://www.htmlfivecan.com/#57</a><br>
@@ -292,8 +301,15 @@
 
     <section>
       <h4>HTML5 Audio</h4>
-      <aside class="notes">
-      <a href="http://html5-demos.appspot.com/static/webaudio/createMediaSourceElement.html">http://html5-demos.appspot.com/static/webaudio/createMediaSourceElement.html</a>
+      <p>Web Audio API <code>createMediaSourceElement()</code> Example</p><style>
+        #audioapi-iframe {
+          border: none;
+          width: 100%;
+          height: 350px;
+        }
+      </style>
+      <iframe scrolling="no" src="src/audioAPI/index.html" id="audioapi-iframe"></iframe>
+      <p>Courtesy: <a href="http://html5-demos.appspot.com/static/webaudio/createMediaSourceElement.html">Web Audio API createMediaSourceElement() Example</a>, Google</p>
       </aside>
     </section>
     </section>
@@ -345,9 +361,9 @@
     </section>
 
     <section>
-      <h3>Browser Compatibility</h3>
+      <h3>Mobile Browser Compatibility</h3>
       <!--TODO: Include a good table - tag-wise support  - include latest one-->
-      <img src="img/html5_browser_support_chart1.png"/>
+      <img src="img/mobileHTML5Compatibility.png" width="700"/>
     </section>
 
     <section>
